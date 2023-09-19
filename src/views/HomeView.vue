@@ -1,9 +1,9 @@
 <script setup>
-import HelloWorld from '../components/HelloWorld.vue'
+import VideoPlayer from '../components/VideoPlayer.vue';
 </script>
 
 <template>
   <main>
-    <HelloWorld />
+    <VideoPlayer src="../../public/video.mp4" controls="true" />
   </main>
 </template>
