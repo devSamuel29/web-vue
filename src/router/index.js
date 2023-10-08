@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HelloWorld from '../views/HomeView.vue'
+import VideoPlayer from '../views/HomeView.vue'
+import RegisterForm from '../views/RegisterView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,7 +8,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HelloWorld
+      component: VideoPlayer
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: RegisterForm
     }
   ]
 })
