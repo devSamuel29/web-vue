@@ -1,33 +1,10 @@
 <template>
-  <div
-    class="relative w-[800px] h-auto"
-    @mouseover="showControls = true"
-    @mouseleave="showControls = false"
-  >
-    <video
-      class="w-full"
-      :src="src"
-      :muted="muted"
-      :autoplay="autoplay"
-      :controls="controls"
-      :loop="loop"
-      :width="width"
-      :height="height"
-      :poster="poster"
-      :preload="preload"
-      :playsinline="true"
-      ref="player"
-      @click="togglePlayPause"
-    />
+  <div class="relative w-[800px] h-auto" @mouseover="showControls = true" @mouseleave="showControls = false">
+    <video class="w-full" :src="src" :muted="muted" :autoplay="autoplay" :controls="controls" :loop="loop" :width="width"
+      :height="height" :poster="poster" :preload="preload" :playsinline="true" ref="player" @click="togglePlayPause" />
     <div v-show="showControls" class="absolute bottom-0 w-full flex flex-col p-4">
-      <input
-        type="range"
-        min="0"
-        :max="duration"
-        v-model="currentTime"
-        class="w-full h-3 appearance-none rounded-md bg-gray-300 focus:outline-none"
-        @input="seekVideo"
-      />
+      <input type="range" min="0" :max="duration" v-model="currentTime"
+        class="w-full h-3 appearance-none rounded-md bg-gray-300 focus:outline-none" @input="seekVideo" />
       <div class="flex items-center">
         <button @click="togglePlayPause">
           <i v-html="isPlaying ? pauseIcon : playIcon"></i>
